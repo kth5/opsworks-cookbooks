@@ -19,7 +19,7 @@ link tomcat_path do
   not_if { ::File.exists?(tomcat_path) }
 end
 
-directory "/opt/tomcat" do
+directory "/opt/tomcat/" do
   owner 'tomcat'
   group node['spiral']['users']['group']
   mode '0755'
