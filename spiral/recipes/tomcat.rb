@@ -23,6 +23,7 @@ directory "/opt/tomcat" do
   owner 'tomcat'
   group node['spiral']['users']['group']
   mode '0755'
+  recursive true
 end
 
 #supervisor_service 'tomcat' do
