@@ -1,4 +1,4 @@
-include_recipe "spiral_java::default"
+include_recipe "spiral::default"
 
 execute 'tomcat_download' do
   command "/usr/bin/wget -O /tmp/tomcat.tar.gz -q #{node['spiral']['tomcat']['url']}"
