@@ -26,6 +26,10 @@ directory "/opt/tomcat" do
   recursive true
 end
 
+execute 'tomcat_chown' do
+  command "chown -R tomcat:#{node['spiral']['users']['group']} #{tomcat_path}"
+end
+
 supervisor_service 'tomcat' do
   action :enable
   autostart true
