@@ -28,5 +28,5 @@ supervisor_service 'tomcat' do
   action :enable
   autostart true
   user 'tomcat'
-  command "#{tomcat_path}/bin/catalina.sh"
+  command "#{tomcat_path}/bin/catalina.sh run"
 end
