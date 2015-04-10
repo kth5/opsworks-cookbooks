@@ -2,7 +2,7 @@ include_recipe 'apt'
 include_recipe 'spiral::default'
 
 remote_file "/tmp/tomcat-#{node['spiral']['tomcat']['version']}.tar.gz" do
-  source "/opt/apache-tomcat-#{node['spiral']['tomcat']['url']}"
+  source node['spiral']['tomcat']['url']
 end
 
 execute 'tomcat_extract' do
