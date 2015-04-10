@@ -15,9 +15,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "chef_solo" do |chef|
-    chef.add_recipe "spiral_java"
-    #chef.add_recipe "spiral_tomcat"
-    chef.add_recipe "apt"
+    chef.add_recipe "spiral_java::tomcat"
     chef.cookbooks_path = "./"
 
     chef.json = {
