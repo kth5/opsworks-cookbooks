@@ -20,7 +20,7 @@ link tomcat_path do
 end
 
 execute 'tomcat_chown' do
-  command "chown -R tomcat:#{node['spiral']['users']['group']} #{tomcat_path}"
+  command "chown -R tomcat:#{node['spiral']['users']['group']} #{tomcat_path}/"
   action :run
 end
 
