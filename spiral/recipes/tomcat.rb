@@ -25,9 +25,3 @@ directory "/opt/tomcat" do
   mode '0755'
   recursive true
 end
-
-#supervisor_service 'tomcat' do
-#  action :enable
-#  autostart true
-#  user 'tomcat'
-#end
