@@ -10,7 +10,7 @@ remote_file dl_location do
 end
 
 execute 'tomcat_extract' do
-  command 'tar xzf #{dl_location} -C /opt'
+  command "tar xzf #{dl_location} -C /opt"
   not_if { ::File.exists?("/opt/apache-tomcat-#{node['spiral']['tomcat']['version']}") }
 end
 
