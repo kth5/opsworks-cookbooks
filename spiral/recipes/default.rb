@@ -1,4 +1,5 @@
 include_recipe 'apt'
+include_recipe 'spiral::users'
 
 apt_repository 'webupd8team-java-trusty' do
   uri 'http://ppa.launchpad.net/webupd8team/java/ubuntu'
