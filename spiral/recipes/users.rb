@@ -1,5 +1,5 @@
 group node['spiral']['users']['group'] do
-  action :modify
+  action :create
   append true
 end
 
@@ -8,5 +8,5 @@ user 'tomcat' do
   system true
   gid node['spiral']['users']['group'] 
   shell '/bin/false'
-  action :modify
+  action :create
 end
