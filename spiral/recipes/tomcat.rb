@@ -19,15 +19,9 @@ link tomcat_path do
   not_if { ::File.exists?(tomcat_path) }
 end
 
-directory "/opt/tomcat/" do
-  owner 'tomcat'
-  group node['spiral']['users']['group']
-  mode '0755'
-  recursive true
-end
-
 execute 'tomcat_chown' do
   command "chown -R tomcat:#{node['spiral']['users']['group']} #{tomcat_path}"
+  action :run
 end
 
 supervisor_service 'tomcat' do
