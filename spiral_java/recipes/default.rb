@@ -1,9 +1,11 @@
-apt_repository "webupd8team-java-trusty" do
-  uri "http://ppa.launchpad.net/webupd8team/java/ubuntu"
+include_recipe 'apt'
+
+apt_repository 'webupd8team-java-trusty' do
+  uri 'http://ppa.launchpad.net/webupd8team/java/ubuntu'
   distribution node['lsb']['codename']
-  components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "EEA14886"
+  components ['main']
+  keyserver 'keyserver.ubuntu.com'
+  key 'EEA14886'
 end
 
 execute 'accept_oracle_license' do
