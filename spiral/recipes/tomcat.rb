@@ -6,5 +6,5 @@ execute 'tomcat_download' do
 end
 
 execute 'tomcat_extract' do
-  command "tar xzf /tmp/tomcat.tar.gz -C /opt/"
+  command "tar xzf /tmp/tomcat.tar.gz -C /opt/ && mv /opt/apache-tomcat-#{node['spiral']['tomcat']['version'} /opt/tomcat"
 end
