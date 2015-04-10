@@ -16,8 +16,8 @@ directory "/opt/tomcat" do
   action :create
 end
 
-supervisor_service 'tomcat' do
-  action :enable
-  autostart true
-  user 'tomcat'
-end
+#supervisor_service 'tomcat' do
+#  action :enable
+#  autostart true
+#  user 'tomcat'
+#end
