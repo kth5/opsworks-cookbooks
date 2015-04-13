@@ -11,11 +11,12 @@ link log_folder do
   not_if { ::File.exists?(log_folder) }
 end
 
-template '/etc/nginx/sites-available/teamcity' do
+template '/etc/nginx/sites-enabled/teamcity' do
   source 'nginx_proxy_pass.erb'
   verify "nginx -t -c %{path}"
   action :create
   owner 'root'
   group 'root'
   mode '0755'
+  notifies :restart, "service[nginx]"
 end
