@@ -1,3 +1,5 @@
+include_recipe 'spiral::tomcat'
+
 directory '/var/log/wallet' do
   owner 'tomcat'
   group node['spiral']['users']['group']
