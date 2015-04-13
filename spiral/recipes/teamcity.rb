@@ -20,3 +20,8 @@ template '/etc/nginx/sites-enabled/teamcity' do
   mode '0755'
   notifies :restart, "service[nginx]"
 end
+
+file '/etc/nginx/sites-enabled/default' do
+  action :delete
+  notifies :restart, "service[nginx]"
+end
